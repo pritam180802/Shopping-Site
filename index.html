@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Mallika Traders - Quality Ethnic & Western Wear in Kolkata</title>
+    <meta name="description" content="Discover handpicked collections of premium quality ethnic and western wear at Mallika Traders. Connect with us on WhatsApp for a personalized shopping experience in Kolkata.">
+    <meta name="keywords" content="Mallika Traders, online clothing, ethnic wear, western wear, kurtis, sarees, Kolkata fashion, quality apparel">
+    <meta name="author" content="Mallika Traders">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M20 80C20 80 25 60 40 50C55 40 60 20 60 20M80 80C80 80 75 60 60 50C45 40 40 20 40 20M40 20C40 35 50 45 60 50' stroke='%23111827' stroke-width='8' stroke-linecap='round' stroke-linejoin='round' fill='none'/><path d='M60 20C70 30 85 35 90 25C95 15 85 10 75 15C65 20 60 20 60 20Z' fill='%23111827'/></svg>">
+
+    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+    <meta property="og:title" content="Mallika Traders - Quality Ethnic & Western Wear in Kolkata">
+    <meta property="og:description" content="Discover handpicked collections of premium quality ethnic and western wear.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1552874869-5c39ec9288dc?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:url" content="https://yourwebsite.com"> <!-- Replace with your actual domain later -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mallika Traders - Quality Ethnic & Western Wear in Kolkata">
+    <meta name="twitter:description" content="Discover handpicked collections of premium quality ethnic and western wear.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1552874869-5c39ec9288dc?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Stylesheets and Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Custom Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .product-card .details {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .product-card:hover .details {
+            opacity: 1;
+        }
+        /* Styles for the modal */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.25s ease;
+        }
+        /* Accessibility focus ring */
+        :focus-visible {
+            outline: 3px solid #F472B6; /* A visible rose color focus ring */
+            outline-offset: 2px;
+        }
+        #search-overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center space-x-2" aria-label="Mallika Traders Home">
+                <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-900" aria-hidden="true">
+                    <path d="M20 80C20 80 25 60 40 50C55 40 60 20 60 20M80 80C80 80 75 60 60 50C45 40 40 20 40 20M40 20C40 35 50 45 60 50" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M60 20C70 30 85 35 90 25C95 15 85 10 75 15C65 20 60 20 60 20Z" fill="currentColor"/>
+                </svg>
+                <span class="text-2xl font-playfair font-bold text-gray-900">Mallika Traders</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-rose-500 transition">Home</a>
+                <a href="#shop" class="text-gray-600 hover:text-rose-500 transition">Collection</a>
+                <a href="#request" class="text-gray-600 hover:text-rose-500 transition">Request Product</a>
+                <a href="#contact" class="text-gray-600 hover:text-rose-500 transition">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-5">
+                <button id="search-btn" class="text-gray-600 hover:text-rose-500 transition" aria-label="Search"><i class="fas fa-search"></i></button>
+                <a href="https://wa.me/917811868413" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-rose-500 transition" aria-label="Contact on WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-600 hover:text-rose-500 focus:outline-none" aria-label="Open menu">
+                    <i class="fas fa-bars fa-lg" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#home" class="block py-2 px-6 text-sm text-gray-600 hover:bg-rose-50">Home</a>
+            <a href="#shop" class="block py-2 px-6 text-sm text-gray-600 hover:bg-rose-50">Collection</a>
+            <a href="#request" class="block py-2 px-6 text-sm text-gray-600 hover:bg-rose-50">Request Product</a>
+            <a href="#contact" class="block py-2 px-6 text-sm text-gray-600 hover:bg-rose-50">Contact</a>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-start pt-20 px-4 opacity-0">
+        <div class="relative w-full max-w-lg">
+            <input type="text" id="search-input" placeholder="Search for products (e.g., Kurti, Saree...)" class="w-full py-3 px-5 rounded-full text-lg focus:outline-none">
+            <button id="close-search-btn" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-800 text-2xl" aria-label="Close search">&times;</button>
+        </div>
+    </div>
+
+
+    <main id="home">
+        <!-- Hero Section -->
+        <section class="relative h-[80vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1552874869-5c39ec9288dc?q=80&w=1974&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+                <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-4">Elegance in Every Thread</h1>
+                <p class="text-lg md:text-xl max-w-2xl mb-8">Discover curated collections that define your style and tell your story.</p>
+                <a href="#shop" class="bg-rose-500 text-white font-bold py-3 px-8 rounded-full hover:bg-rose-600 transition duration-300 transform hover:scale-105">View Collection</a>
+            </div>
+        </section>
+
+        <!-- Promotional Banner -->
+        <section class="bg-rose-100 border-t-2 border-b-2 border-rose-200">
+            <div class="container mx-auto px-6 py-6 text-center">
+                <h2 class="text-xl md:text-2xl font-semibold text-rose-800">Discover <span class="font-bold">Premium Quality</span> & <span class="font-bold">Unmatched Value</span> in Every Piece.</h2>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="shop" class="py-16 sm:py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-playfair font-bold text-center mb-10">Our Collection</h2>
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Cards -->
+                    <!-- Note for production: Replace placeholder images with your own compressed images for faster loading -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group product-card">
+                        <div class="relative">
+                            <img loading="lazy" src="https://placehold.co/400x500/F6D8D4/4A4A4A?text=Stylish+Kurti" onerror="this.onerror=null;this.src='https://placehold.co/400x500/F3F4F6/9CA3AF?text=Image+Not+Found';" alt="A stylish embroidered silk kurti" class="w-full h-auto transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 details">
+                                <a href="https://wa.me/917811868413?text=Hi%20Mallika%20Traders,%20I'm%20inquiring%20about%20the%20Embroidered%20Silk%20Kurti." target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2 hover:bg-green-600">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>Enquire on WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg">Embroidered Silk Kurti</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group product-card">
+                        <div class="relative">
+                            <img loading="lazy" src="https://placehold.co/400x500/E8E8E8/4A4A4A?text=Denim+Jacket" onerror="this.onerror=null;this.src='https://placehold.co/400x500/F3F4F6/9CA3AF?text=Image+Not+Found';" alt="A classic blue denim jacket" class="w-full h-auto transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 details">
+                                <a href="https://wa.me/917811868413?text=Hi%20Mallika%20Traders,%20I'm%20inquiring%20about%20the%20Classic%20Denim%20Jacket." target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2 hover:bg-green-600">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>Enquire on WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg">Classic Denim Jacket</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group product-card">
+                        <div class="relative">
+                            <img loading="lazy" src="https://placehold.co/400x500/D4E6F6/4A4A4A?text=Floral+Dress" onerror="this.onerror=null;this.src='https://placehold.co/400x500/F3F4F6/9CA3AF?text=Image+Not+Found';" alt="A light blue summer floral dress" class="w-full h-auto transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 details">
+                                <a href="https://wa.me/917811868413?text=Hi%20Mallika%20Traders,%20I'm%20inquiring%20about%20the%20Summer%20Floral%20Dress." target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2 hover:bg-green-600">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>Enquire on WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg">Summer Floral Dress</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group product-card">
+                        <div class="relative">
+                            <img loading="lazy" src="https://placehold.co/400x500/F6F2D4/4A4A4A?text=Handloom+Saree" onerror="this.onerror=null;this.src='https://placehold.co/400x500/F3F4F6/9CA3AF?text=Image+Not+Found';" alt="A traditional Bengal handloom saree" class="w-full h-auto transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 details">
+                                <a href="https://wa.me/917811868413?text=Hi%20Mallika%20Traders,%20I'm%20inquiring%20about%20the%20Bengal%20Handloom%20Saree." target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2 hover:bg-green-600">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>Enquire on WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg">Bengal Handloom Saree</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group product-card">
+                        <div class="relative">
+                            <img loading="lazy" src="https://placehold.co/400x500/EADDF3/4A4A4A?text=Chikankari+Set" onerror="this.onerror=null;this.src='https://placehold.co/400x500/F3F4F6/9CA3AF?text=Image+Not+Found';" alt="A Lucknowi Chikankari salwar set" class="w-full h-auto transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 details">
+                                <a href="https://wa.me/917811868413?text=Hi%20Mallika%20Traders,%20I'm%20inquiring%20about%20the%20Chikankari%20Salwar%20Set." target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2 hover:bg-green-600">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>Enquire on WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg">Chikankari Salwar Set</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group product-card">
+                        <div class="relative">
+                            <img loading="lazy" src="https://placehold.co/400x500/D4F0F6/4A4A4A?text=Palazzo+Pants" onerror="this.onerror=null;this.src='https://placehold.co/400x500/F3F4F6/9CA3AF?text=Image+Not+Found';" alt="Comfortable rayon palazzo pants" class="w-full h-auto transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 details">
+                                <a href="https://wa.me/917811868413?text=Hi%20Mallika%20Traders,%20I'm%20inquiring%20about%20the%20Rayon%20Palazzo%20Pants." target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2 hover:bg-green-600">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>Enquire on WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg">Rayon Palazzo Pants</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group product-card">
+                        <div class="relative">
+                            <img loading="lazy" src="https://placehold.co/400x500/F6E9D4/4A4A4A?text=Men's+Panjabi" onerror="this.onerror=null;this.src='https://placehold.co/400x500/F3F4F6/9CA3AF?text=Image+Not+Found';" alt="A traditional Bengali Panjabi for men" class="w-full h-auto transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 details">
+                                <a href="https://wa.me/917811868413?text=Hi%20Mallika%20Traders,%20I'm%20inquiring%20about%20the%20Men's%20Bengali%20Panjabi." target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2 hover:bg-green-600">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>Enquire on WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg">Men's Bengali Panjabi</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group product-card">
+                        <div class="relative">
+                            <img loading="lazy" src="https://placehold.co/400x500/DADADA/4A4A4A?text=Block+Print+Shirt" onerror="this.onerror=null;this.src='https://placehold.co/400x500/F3F4F6/9CA3AF?text=Image+Not+Found';" alt="A casual block print shirt" class="w-full h-auto transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 details">
+                                <a href="https://wa.me/917811868413?text=Hi%20Mallika%20Traders,%20I'm%20inquiring%20about%20the%20Block%20Print%20Shirt." target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2 hover:bg-green-600">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>Enquire on WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg">Block Print Shirt</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- No Results Message -->
+                <div id="no-results" class="text-center text-gray-500 mt-12 hidden">
+                    <h3 class="text-2xl font-semibold">No Products Found</h3>
+                    <p class="mt-2">Sorry, we couldn't find any products matching your search.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="bg-white py-16 sm:py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-playfair font-bold text-center mb-12">Why Choose Mallika Traders?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <div>
+                        <div class="flex items-center justify-center h-16 w-16 mx-auto bg-rose-100 text-rose-500 rounded-full mb-4" aria-hidden="true">
+                            <i class="fas fa-gem text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Handpicked Quality</h3>
+                        <p class="text-gray-600">Each item in our collection is carefully selected for its superior fabric, intricate craftsmanship, and lasting durability.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-center h-16 w-16 mx-auto bg-rose-100 text-rose-500 rounded-full mb-4" aria-hidden="true">
+                            <i class="fas fa-tag text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Unbeatable Value</h3>
+                        <p class="text-gray-600">We believe in fair pricing. Our direct sourcing model means you get premium fashion without the premium price tag.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-center h-16 w-16 mx-auto bg-rose-100 text-rose-500 rounded-full mb-4" aria-hidden="true">
+                            <i class="fas fa-comments text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Personalized Service</h3>
+                        <p class="text-gray-600">Connect with us directly on WhatsApp for a friendly, one-on-one shopping experience tailored to your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Request Section -->
+        <section id="request" class="bg-gray-100 py-16 sm:py-20">
+            <div class="container mx-auto px-6 text-center">
+                <i class="fas fa-question-circle text-rose-500 text-5xl mb-4" aria-hidden="true"></i>
+                <h2 class="text-3xl font-playfair font-bold mb-4">Looking for Something Special?</h2>
+                <p class="max-w-2xl mx-auto mb-8 text-gray-600">If you can't find a specific item in our collection, let us know! We will do our best to source it for you with the same promise of quality and value.</p>
+                <a href="https://wa.me/917811868413?text=Hi%20Mallika%20Traders,%20I%20would%20like%20to%20request%20a%20product." target="_blank" rel="noopener noreferrer" class="bg-rose-500 text-white font-bold py-3 px-8 rounded-full hover:bg-rose-600 transition duration-300 transform hover:scale-105 inline-block">
+                    Request via WhatsApp
+                </a>
+            </div>
+        </section>
+        
+        <!-- Shop by Genders Section -->
+        <section class="container mx-auto px-6 py-16">
+            <h2 class="text-3xl font-playfair font-bold text-center mb-10">Shop for Women & Men</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="relative rounded-lg overflow-hidden h-96 group">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=2070&auto=format&fit=crop" alt="A stylish woman posing in a fashionable outfit." class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="text-center">
+                            <h3 class="text-white text-3xl font-playfair font-bold">For Women</h3>
+                            <a href="#shop" class="text-white font-semibold mt-2 inline-block border-b-2 border-rose-400 hover:border-white">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative rounded-lg overflow-hidden h-96 group">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop" alt="A man wearing a stylish outfit." class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="text-center">
+                            <h3 class="text-white text-3xl font-playfair font-bold">For Men</h3>
+                             <a href="#shop" class="text-white font-semibold mt-2 inline-block border-b-2 border-rose-400 hover:border-white">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Visit Us Section -->
+        <section id="visit" class="bg-white py-16 sm:py-20">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <!-- Image Column -->
+                    <div class="md:w-1/2 w-full">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1595034654378-9e6357e6a71e?q=80&w=1974&auto=format&fit=crop" alt="Interior of a beautiful clothing boutique with clothes on racks." class="rounded-lg shadow-xl w-full h-full object-cover">
+                    </div>
+                    <!-- Content Column -->
+                    <div class="md:w-1/2 w-full text-center md:text-left">
+                        <h2 class="text-3xl font-playfair font-bold mb-4">Visit Us for a Personal Touch</h2>
+                        <p class="text-gray-600 mb-6">
+                            You're invited to see our collection in person from our home in Esplanade! This is the perfect chance to feel the quality of our fabrics, see the true colors, and try on your favorite pieces in a comfortable, private setting. Please get in touch with us to schedule a friendly, no-pressure visit. We look forward to welcoming you!
+                        </p>
+                        <a href="https://wa.me/917811868413?text=Hi!%20I'd%20like%20to%20schedule%20a%20visit%20to%20see%20your%20collection." target="_blank" rel="noopener noreferrer" class="bg-rose-500 text-white font-bold py-3 px-8 rounded-full hover:bg-rose-600 transition duration-300 transform hover:scale-105 inline-block">
+                            Schedule a Visit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+         <!-- WhatsApp Updates Section -->
+        <section class="bg-gray-800 text-white py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-playfair font-bold mb-4">Get WhatsApp Updates</h2>
+                <p class="mb-8 max-w-lg mx-auto">Join our WhatsApp channel to be the first to know about new arrivals, exclusive offers, and restocks.</p>
+                <form id="whatsapp-form" class="max-w-md mx-auto flex">
+                    <label for="whatsapp-number" class="sr-only">WhatsApp Number</label>
+                    <input id="whatsapp-number" type="tel" placeholder="Enter your WhatsApp number" class="w-full text-gray-800 rounded-l-full py-3 px-6 focus:outline-none" required>
+                    <button id="whatsapp-submit-btn" type="submit" class="bg-green-500 text-white font-bold py-3 px-8 rounded-r-full hover:bg-green-600 transition duration-300">Join Now</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About Column -->
+                <div>
+                     <h3 class="text-lg font-semibold mb-4">Mallika Traders</h3>
+                    <p class="text-gray-400">Your online destination for handpicked fashion that celebrates your unique style.</p>
+                </div>
+                <!-- Quick Links Column -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#shop" class="text-gray-400 hover:text-white">Collection</a></li>
+                        <li><a href="#request" class="text-gray-400 hover:text-white">Request Product</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Help Column -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Help</h3>
+                    <ul class="space-y-2">
+                        <li><button id="faq-btn" class="text-gray-400 hover:text-white text-left">FAQs</button></li>
+                        <li><button id="shipping-btn" class="text-gray-400 hover:text-white text-left">Shipping Policy</button></li>
+                        <li><button id="return-btn" class="text-gray-400 hover:text-white text-left">Return Policy</button></li>
+                    </ul>
+                </div>
+                <!-- Contact Column -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3" aria-hidden="true"></i>
+                            <a href="https://www.google.com/maps/search/?api=1&query=22.503361,88.415333" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">
+                                <span>Esplanade, Kolkata, West Bengal</span>
+                            </a>
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3" aria-hidden="true"></i><a href="mailto:mallikanaiya441@gmail.com" class="hover:text-white transition">mallikanaiya441@gmail.com</a></li>
+                        <li class="flex items-center"><i class="fab fa-whatsapp mr-3" aria-hidden="true"></i><a href="https://wa.me/917811868413" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">+91 7811868413</a></li>
+                        <li class="flex items-center"><i class="fas fa-clock mt-1 mr-3" aria-hidden="true"></i><span>9:00 AM - 8:00 PM</span></li>
+                        <li class="flex items-start"><i class="fas fa-info-circle mt-1 mr-3" aria-hidden="true"></i><span>Please contact us before arriving.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="bg-gray-900 border-t border-gray-700 py-4">
+            <p class="text-center text-gray-500 text-sm">&copy; 2025 Mallika Traders. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="modal-container" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden opacity-0" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content bg-white rounded-lg shadow-xl w-full max-w-lg p-6 relative transform scale-95">
+            <button class="modal-close-btn absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl" aria-label="Close modal">&times;</button>
+            <h2 id="modal-title" class="text-2xl font-playfair font-bold mb-4">Modal Title</h2>
+            <div id="modal-body" class="text-gray-600 space-y-4">
+                <p>Modal content goes here.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ===================================================================
+            // SCRIPT SETUP: CACHE DOM ELEMENTS & DEFINE FUNCTIONS
+            // Caching elements that are frequently used improves performance.
+            // ===================================================================
+
+            // --- Element Caching ---
+            const elements = {
+                menuBtn: document.getElementById('menu-btn'),
+                mobileMenu: document.getElementById('mobile-menu'),
+                modalContainer: document.getElementById('modal-container'),
+                modalTitle: document.getElementById('modal-title'),
+                modalBody: document.getElementById('modal-body'),
+                closeModalBtn: document.getElementById('modal-container').querySelector('.modal-close-btn'),
+                faqBtn: document.getElementById('faq-btn'),
+                shippingBtn: document.getElementById('shipping-btn'),
+                returnBtn: document.getElementById('return-btn'),
+                whatsappForm: document.getElementById('whatsapp-form'),
+                whatsappSubmitBtn: document.getElementById('whatsapp-submit-btn'),
+                searchBtn: document.getElementById('search-btn'),
+                searchOverlay: document.getElementById('search-overlay'),
+                searchInput: document.getElementById('search-input'),
+                closeSearchBtn: document.getElementById('close-search-btn'),
+                productGrid: document.getElementById('product-grid'),
+                productCards: document.getElementById('product-grid').getElementsByClassName('product-card'),
+                noResultsMessage: document.getElementById('no-results')
+            };
+            let previouslyFocusedElement = null;
+
+            // --- Function Definitions ---
+            const openModal = (title, content) => {
+                previouslyFocusedElement = document.activeElement;
+                elements.modalTitle.innerHTML = title;
+                elements.modalBody.innerHTML = content;
+                elements.modalContainer.classList.remove('hidden');
+                setTimeout(() => {
+                    elements.modalContainer.classList.remove('opacity-0');
+                    elements.modalContainer.querySelector('.modal-content').classList.remove('scale-95');
+                    elements.closeModalBtn.focus();
+                }, 10);
+            };
+
+            const closeModal = () => {
+                elements.modalContainer.classList.add('opacity-0');
+                elements.modalContainer.querySelector('.modal-content').classList.add('scale-95');
+                setTimeout(() => {
+                    elements.modalContainer.classList.add('hidden');
+                    if (previouslyFocusedElement) {
+                        previouslyFocusedElement.focus();
+                    }
+                }, 250);
+            };
+
+            const closeSearch = () => {
+                elements.searchOverlay.classList.add('opacity-0');
+                setTimeout(() => {
+                    elements.searchOverlay.classList.add('hidden');
+                }, 300);
+            };
+
+            // ===================================================================
+            // EVENT LISTENERS
+            // This section hooks up all the interactive parts of the site.
+            // ===================================================================
+
+            // --- Mobile Menu Toggle ---
+            elements.menuBtn.addEventListener('click', () => {
+                const isExpanded = elements.menuBtn.getAttribute('aria-expanded') === 'true';
+                elements.menuBtn.setAttribute('aria-expanded', !isExpanded);
+                elements.mobileMenu.classList.toggle('hidden');
+            });
+
+            // --- Modal Event Listeners ---
+            elements.closeModalBtn.addEventListener('click', closeModal);
+            elements.modalContainer.addEventListener('click', (e) => {
+                if (e.target === elements.modalContainer) closeModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !elements.modalContainer.classList.contains('hidden')) closeModal();
+            });
+
+            // --- Policy Button Event Listeners ---
+            elements.faqBtn.addEventListener('click', () => {
+                const title = 'Frequently Asked Questions';
+                const content = `
+                    <div class="space-y-4">
+                        <div><h4 class="font-semibold">1. How do I inquire about a product?</h4><p>Simply click the "Enquire on WhatsApp" button on any product. It will open a chat with us with the product details already included!</p></div>
+                        <div><h4 class="font-semibold">2. What are your business hours?</h4><p>We are available from 9:00 AM to 8:00 PM every day. You can find our contact details in the footer.</p></div>
+                        <div><h4 class="font-semibold">3. Do you offer delivery?</h4><p>Currently, we do not offer a delivery service. All items are to be collected from our location in Kolkata. We are actively working on providing delivery options soon!</p></div>
+                    </div>`;
+                openModal(title, content);
+            });
+
+            elements.shippingBtn.addEventListener('click', () => {
+                const title = 'Shipping Policy';
+                const content = `
+                    <h4 class="font-semibold text-lg">Local Pickup Only</h4><p>Currently, we do not offer a delivery service. All items can be collected from our location in Esplanade, Kolkata, after coordinating a time with us on WhatsApp.</p><br>
+                    <h4 class="font-semibold text-lg">Delivery Coming Soon!</h4><p>We are working hard to bring our collection directly to your doorstep and will be launching a delivery service soon. Please join our WhatsApp channel for updates!</p>`;
+                openModal(title, content);
+            });
+
+            elements.returnBtn.addEventListener('click', () => {
+                const title = 'Return Policy';
+                const content = `
+                    <h4 class="font-semibold text-lg">Inspection at Pickup</h4><p>As all items are collected in person, we strongly encourage you to inspect your purchase thoroughly at the time of pickup to ensure you are completely satisfied.</p><br>
+                    <h4 class="font-semibold text-lg">Final Sale</h4><p>Due to the nature of in-person collection and inspection, all sales are considered final. If you have any concerns about a product, please address them with us before completing your purchase. We're here to help!</p>`;
+                openModal(title, content);
+            });
+            
+            // --- WhatsApp Form Submission ---
+            elements.whatsappForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxitweluUzAF9_4rTaVwrs0BMffn8HkuFNcKqm8wt6jx3nLnz5cH4ZWOy1ES32HHYMYrA/exec'; 
+                const phoneInput = e.target.querySelector('input[type="tel"]');
+                const originalBtnText = elements.whatsappSubmitBtn.innerHTML;
+                elements.whatsappSubmitBtn.disabled = true;
+                elements.whatsappSubmitBtn.innerHTML = 'Subscribing...';
+                
+                const formData = new FormData(elements.whatsappForm);
+                formData.append('WhatsApp Number', phoneInput.value);
+
+                fetch(scriptURL, { method: 'POST', body: formData})
+                    .then(response => {
+                        openModal('Welcome!', `<p>Thank you for joining! We'll send updates to <strong>${phoneInput.value}</strong>.</p>`);
+                        elements.whatsappForm.reset();
+                    })
+                    .catch(error => {
+                        openModal('Error!', `<p>Something went wrong. Please try again later.</p>`);
+                        console.error('Error!', error.message);
+                    })
+                    .finally(() => {
+                        elements.whatsappSubmitBtn.disabled = false;
+                        elements.whatsappSubmitBtn.innerHTML = originalBtnText;
+                    });
+            });
+
+            // --- Search Functionality ---
+            elements.searchBtn.addEventListener('click', () => {
+                elements.searchOverlay.classList.remove('hidden');
+                setTimeout(() => {
+                    elements.searchOverlay.classList.remove('opacity-0');
+                    elements.searchInput.focus();
+                }, 10);
+            });
+
+            elements.closeSearchBtn.addEventListener('click', closeSearch);
+            elements.searchOverlay.addEventListener('click', (e) => {
+                if (e.target === elements.searchOverlay) closeSearch();
+            });
+
+            elements.searchInput.addEventListener('keyup', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                let productsFound = 0;
+
+                for (let card of elements.productCards) {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        productsFound++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+                elements.noResultsMessage.classList.toggle('hidden', productsFound > 0);
+            });
+        });
+    </script>
+
+</body>
+</html>
